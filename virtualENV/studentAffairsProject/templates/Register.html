@@ -1,0 +1,147 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Student Data</title>
+  <script src="../js/Register.js"></script>
+  <link href="../css/Register.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+  <link rel="icon" href="../Images/icon.png">
+
+</head>
+
+<body>
+  <nav class="nav">
+    <div>
+      <img src="../Images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
+      <a href="#footer-clean">ABOUT US</a>&emsp;
+      <a href="Login.html">LOGIN</a>&emsp;
+      <a id="Register" >REGISTER</a>&emsp;
+      <a href="Home.html">Home</a>&emsp;
+
+    </div>
+  </nav>
+
+    <div class="container">
+      <div class="title">Registration</div>
+        <div class="content">
+          <form>
+            <div class="user-details">
+
+              <div class="input">
+                  <label>
+                    <span class="details">User Name</span>
+                    <input id="Name" type="text" placeholder="Enter your User name">
+                  </label>
+              </div>
+
+              <div class="input">
+                  <label>
+                    <span class="details">ID</span>
+                    <input id="ID" type="text" placeholder="Enter your id">
+                  </label>
+              </div>
+
+              <div class="input">
+                  <label>
+                    <span class="details">Email</span>
+                    <input id="E" type="email" placeholder="Enter your Email">
+                  </label>
+              </div>
+
+              <div class="input">
+                  <label>
+                    <span class="details">Phone</span>
+                    <input id="Ph" type="text" placeholder="Enter your Phone">
+                  </label>
+              </div>
+
+              <div class="input">
+                  <label>
+                    <span class="details">GPA</span>
+                    <input id="GPA" type="text" placeholder="Enter your GPA">
+                  </label>
+              </div>
+
+              <div class="input">
+                  <label>
+                    <span class="details">Enter your Brith Date</span>
+                    <input id="Dob" type="Date" placeholder="Enter your Brith Date">
+                  </label>
+              </div>
+
+              <div class="input">
+                <label>
+                  <span class="details">Enter your Level</span>
+                  <input type="text" placeholder="Enter your Level" id="Lev">
+                </label>
+              </div>
+
+              <div class="input">
+                  <label>
+                    <span class="Gender">Enter your Gender</span>
+                    <select id="g">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                  </label>
+              </div>
+
+              <div class="input">
+                <label>
+                  <span class="details">Enter your Department</span>
+                  <input type="text" placeholder="Enter your Department" id="Depart">
+                </label>
+              </div>
+
+               <div class="input">
+                  <label>
+                    <span class="details">Enter your Status</span>
+                  </label>
+                  <div class="Rad">
+                    <label for="Active">Active</label>
+                    <input class="Radio" type="radio" id="Active" name="Status" value="Active">
+
+                    <label class="Text" for="Inactive">Inactive</label>
+                    <input class="Text2" type="radio" id="Inactive" name="Status" value="Inactive">
+                  </div>
+              </div>
+
+              <div class="input">
+                <label>
+                  <span class="details">Enter The Password</span>
+                  <input type="password" placeholder="Enter The Password" id="Pass">
+                </label>
+              </div>
+
+              <div class="input">
+                <label>
+                  <span class="details">Confirm Password</span>
+                  <input type="password" placeholder="Confirm Password" id="PassConf">
+                </label>
+              </div>
+            </div>
+
+            <div class="button">
+              <button onclick="Save()" type="button">Register</button>
+            </div>
+
+          </form>
+        </div>
+    </div>
+
+  <footer id="footer-clean">
+    <div class="Footer">
+      <h3>About</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/groups/fcaicu2025/" target="_blank">Faculty</a></li>
+        <li><a href="#">Team</a></li> <!-- Add  team page -->
+      </ul>
+    </div>
+    <div >
+      <p class="copyright">FCAI © 2023</p>
+    </div>
+  </footer>
+</body>
+
+</html>

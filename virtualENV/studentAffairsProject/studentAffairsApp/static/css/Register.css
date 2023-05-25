@@ -1,0 +1,274 @@
+body{
+  background-image: url("../Images/Register Background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+}
+
+.nav {
+  background-color: white;
+  height: 55px;
+  overflow: hidden;
+  margin: -16px -8px -16px -8px;
+}
+
+.nav a {
+  float: right;
+  display: block;
+  color: black;
+  padding: 20px 20px;
+  height: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav a:hover {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  margin-top: 3px;
+}
+
+.nav img {
+  text-align: left;
+  width: 45px;
+  height: 50px;
+  margin-top: 9px;
+  margin-left: 10px;
+}
+
+.nav #Register{
+  float: right;
+  display: block;
+  padding: 20px 20px;
+  height: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  margin-top: 3px;
+}
+
+.container{
+  FONT-WEIGHT: 100;
+  max-width: 700px;
+  width: 100%;
+  background-image: url("../Images/box Backgroung.jpg");
+  background-repeat: no-repeat;
+  background-position-y: -1px;
+  background-position-x: -1px;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgb(0 0 0 / 15%);
+  margin: 15% auto;
+}
+
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 130px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, black, black);
+}
+
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+.container .input{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+
+span .details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+label .details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.Rad{
+  height: 42px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  margin-top: -5px;
+}
+
+.Radio {
+  height: 13px;
+  width: 15px;
+  float: left;
+  margin-top: 11px;
+  transition: all 0.3s ease;
+
+}
+
+.Text2{
+  height: 13px;
+  transition: all 0.3s ease;
+  margin-left: -76px;
+  margin-top: 11px;
+  width: 20px;
+}
+
+.Text{
+  margin-left: 105px;
+}
+
+input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+select{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+form .button{
+  height: 45px;
+  margin: 35px 0
+}
+
+.button button{
+  background-color: #4177d9;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.342);
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button button:hover{
+  opacity: 0.6;
+}
+
+#footer-clean {
+  position: relative;
+  margin: 40% -8px -8px -8px;
+  width: revert;
+  background-color: black;
+  color: white;
+  padding: 20px 0;
+}
+
+#footer-clean h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  margin-left: 30px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+#footer-clean ul {
+  padding:0;
+  list-style:none;
+  margin-left: 50px;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+#footer-clean ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+#footer-clean ul a:hover {
+  opacity:1;
+}
+
+#footer-clean .copyright {
+  margin-left:50%;
+  font-size:13px;
+  opacity:0.6;
+}
+
+#footer-clean {
+  position: relative;
+  margin: 40% -8px -8px -8px;
+  width: revert;
+  background-color: black;
+  color: white;
+  padding: 20px 0;
+}
+
+#footer-clean h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  margin-left: 30px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+#footer-clean ul {
+  padding:0;
+  list-style:none;
+  margin-left: 50px;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+#footer-clean ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+#footer-clean ul a:hover {
+  opacity:1;
+}
+
+#footer-clean .copyright {
+  margin-left:50%;
+  font-size:13px;
+  opacity:0.6;
+}

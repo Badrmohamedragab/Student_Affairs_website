@@ -1,0 +1,157 @@
+body{
+  background-image: url("../Images/Background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.nav {
+  background-color: white;
+  height: 55px;
+  overflow: hidden;
+  margin: -16px -8px -16px -8px;
+}
+
+.nav a {
+  float: right;
+  display: block;
+  color: black;
+  padding: 20px 20px;
+  height: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav a:hover {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  margin-top: 3px;
+}
+
+.nav img {
+  text-align: left;
+  width: 45px;
+  height: 50px;
+  margin-top: 9px;
+  margin-left: 10px;
+}
+
+.nav #Home{
+  float: right;
+  display: block;
+  padding: 20px 20px;
+  height: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  margin-top: 3px;
+}
+
+.Welcome P{
+  font-family: cursive;
+  font-size: 20px;
+  max-width: 45%;
+}
+
+.Button {
+  background-color: #F44B5E;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.342);
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  width: 180px;
+  height: 47px;
+  cursor: pointer;
+  margin-left: 5%;
+}
+
+.Button:hover{
+  background-color: #D23146;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.342);
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Button:active {
+  background-color: #A61420;
+  box-shadow: 0 0 20px 5px rgb(0 0 0 / 34%);
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Welcome{
+  position: relative;
+  margin-top: 20%;
+  margin-left: 5%;
+  color: white;
+}
+
+.Welcome::after {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: 30%;
+  width: 30%;
+  height: 200%;
+  background-image: url(../Images/Student.png);
+  background-repeat: no-repeat;
+  margin-left: 40%;
+}
+
+#footer-clean {
+  position: relative;
+  margin: 40% -8px -8px -8px;
+  width: revert;
+  background-color: black;
+  color: white;
+  padding: 20px 0;
+}
+
+#footer-clean h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  margin-left: 30px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+#footer-clean ul {
+  padding:0;
+  list-style:none;
+  margin-left: 50px;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+#footer-clean ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+#footer-clean ul a:hover {
+  opacity:1;
+}
+
+#footer-clean .copyright {
+  margin-left:50%;
+  font-size:13px;
+  opacity:0.6;
+}

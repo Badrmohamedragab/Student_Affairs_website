@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+    <link rel="stylesheet" href="../css/search.css">
+    <script src="../js/search.js"></script>
+    <link rel="icon" href="../Images/icon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js">
+    </script>
+
+</head>
+
+<body>
+    <nav>
+        <div id="nav">
+            <img src="../Images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
+            <a href="Home.html">Home</a>&emsp;
+            <a href="Login.html">Login</a>&emsp;
+            <a href="Register.html">Register</a>&emsp;
+            <a href="Search.html">Search</a>&emsp;
+            <a href="Update.html">Update</a>&emsp;
+            <a href="StudTable.html">Students Table</a>
+        </div>
+    </nav>
+
+    <div id="Body">
+
+        <div style="text-align: center" id="search_bar">
+            <label>
+                <input id="label" type="search" required placeholder="Enter name...">
+                <button type="submit" onclick="getSearchData() ;appear()">Search</button>
+            </label>
+
+        </div>
+        <table id="table" style="text-align: center; visibility: hidden;">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>ID</th>
+                    <th>Status</th>
+                    <th>Level</th>
+                    <th>Change department</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+        <div id="Err" hidden="hidden">
+            <button onclick="NoError()">Ok</button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.Project1, .Project2, .Project3, .Project4 {
+  text-align: center;
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.Project1 img, .Project2 img, .Project3 img, .Project4 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+label:hover img {
+  opacity: 0.5;
+}

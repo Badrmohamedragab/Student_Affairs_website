@@ -1,0 +1,118 @@
+body {
+  background-image: url("../Images/Background.png");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav img {
+    text-align: left;
+    width: 45px;
+    height: 50px;
+    margin-top: 9px;
+    margin-left: 10px;
+}
+
+nav {
+    background-color: white;
+    height: 55px;
+    overflow: hidden;
+    margin: -16px -8px;
+}
+
+nav a {
+    float: right;
+    display: block;
+    color: black;
+    padding: 20px 20px;
+    height: 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    margin-top: 3px;
+}
+
+div.intro {
+    padding: 50px;
+}
+
+form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+.container{
+  max-width: 545px;
+  width: 100%;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgb(0 0 0 / 15%);
+  margin: 15% auto;
+}
+
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+.container .input{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+
+.user-details .details{
+  display: block;
+  font-size: x-large;
+  margin-bottom: 5px;
+}
+
+label .details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+input{
+  height: 45px;
+  width: 250%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+#update {
+    background-color: #F44B5E;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%;
+
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 24px;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.342);
+    cursor: pointer;
+}
+
+#update:hover {
+    background-color: #D23146;
+}
+
+#update:active {
+    background-color: #A61420;
+}
