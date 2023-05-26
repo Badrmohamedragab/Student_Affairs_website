@@ -1,81 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Student Affairs (Home Page)</title>
     <meta name="Login" content="Phase one Student Affairs website Home Page">
-    <link rel="stylesheet" href="../css/Login.css">
-    <script src="../js/Login.js"></script>
+    <link rel="stylesheet" href="../static/css/Login.css">
+    <script src="../static/js/Login.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
-    <link rel="icon" href="../Images/icon.png">
+    <link rel="icon" href="../static/images/icon.png">
 
 </head>
+
 <body>
 
-<nav>
-    <div class="nav">
+    <nav>
+        <div class="nav">
 
-        <img src="../Images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
-        <a href="#footer-clean">ABOUT US</a>&emsp;
-        <a id="Login">Login</a>&emsp;
-        <a href="Register.html">Register</a>&emsp;
-        <a href="Home.html">Home</a>&emsp;
-    </div>
+            <img src="../static/images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
+            <a href="#footer-clean">ABOUT US</a>&emsp;
+            <a id="Login">Login</a>&emsp;
+            <a href="{% url 'Register' %}">Register</a>&emsp;
+            <a href="{% url 'Home' %}">Home</a>&emsp;
+        </div>
 
-</nav>
-<br>
-
-<div class="id"  >
-    <img src="../Images/login.png" alt="Error" style="width: 100px; height: 100px;">
+    </nav>
     <br>
-    <h1>Welcome To FCAI Student Affairs </h1>
-    <br>
-    <form>
-        <div class="sii">
-            <p>Sign in with your username and password</p>
-        </div>
-        <label for="un"><b>User Name</b></label>
-        <br>
-        <input id="un" type="text" placeholder="User Name" name="User Name" required>
 
-        <p></p>
-        <label for="pass"><b>Password</b></label>
+    <div class="id">
+        <img src="../static/images/login.png" alt="Error" style="width: 100px; height: 100px;">
         <br>
-        <input id="pass" type="password" placeholder="password" name="password" maxlength="30" minlength="7" required>
+        <h1>Welcome To FCAI Student Affairs </h1>
         <br>
-
-        <div>
+        <form>
+            <div class="sii">
+                <p>Sign in with your username and password</p>
+            </div>
+            <label for="un"><b>User Name</b></label>
             <br>
-            <input id="cb" type="checkbox" name="Remember me">
-            <label id="cb1" for="cb">Remember me</label>
+            <input id="un" type="text" placeholder="User Name" name="User Name" required>
+
+            <p></p>
+            <label for="pass"><b>Password</b></label>
             <br>
-        </div>
-        <br>
+            <input id="pass" type="password" placeholder="password" name="password" maxlength="30" minlength="7"
+                required>
+            <br>
 
+            <div>
+                <br>
+                <input id="cb" type="checkbox" name="Remember me">
+                <label id="cb1" for="cb">Remember me</label>
+                <br>
+            </div>
+            <br>
+
+            <div>
+                <a href="Home.html"></a>
+                <button class="si" type="button" onclick="validate()">Sign in</button>&emsp;
+
+
+            </div>
+            <b>Don't have an account ?</b>
+            <a id="rgn" href="Register.html">Register Now</a>
+        </form>
+    </div>
+
+    <footer id="footer-clean">
+        <div class="container">
+            <h3>About</h3>
+            <ul>
+                <li><a href="https://www.facebook.com/groups/fcaicu2025/" target="_blank">Faculty</a></li>
+                <li><a href="#">Team</a></li> <!-- Add  team page -->
+            </ul>
+        </div>
         <div>
-            <a href="Home.html"></a>
-            <button class="si" type="button" onclick="validate()">Sign in</button>&emsp;
-
-
+            <p class="copyright">FCAI © 2023</p>
         </div>
-        <b>Don't have an account ?</b>
-        <a id="rgn" href="Register.html" >Register Now</a>
-    </form>
-</div>
-
-<footer id="footer-clean">
-    <div class="container">
-        <h3>About</h3>
-        <ul>
-            <li><a href="https://www.facebook.com/groups/fcaicu2025/" target="_blank">Faculty</a></li>
-            <li><a href="#">Team</a></li> <!-- Add  team page -->
-        </ul>
-    </div>
-    <div>
-        <p class="copyright">FCAI © 2023</p>
-    </div>
-</footer>
+    </footer>
 
 
 </body>
+
 </html>
