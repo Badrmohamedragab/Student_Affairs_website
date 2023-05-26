@@ -11,6 +11,7 @@ def Home(request):
 def Register(request):
     return render(request, 'Register.html')
 
+<<<<<<< HEAD
 def addStudent(request):
     Name = request.POST["UserName"]
     Id = request.POST["Id"]
@@ -32,5 +33,7 @@ def addStudent(request):
     return HttpResponse("Student added")
     
 
+=======
+>>>>>>> c18e534deb2045e01fababa29455b4974f4def6e
 def Login(request):
     return render(request, 'Login.html')
