@@ -34,3 +34,20 @@ def addStudent(request):
 
 def Login(request):
     return render(request, 'Login.html')
+
+def search(request):
+    if request.method == "GET":
+        search_query = request.GET.get('q')
+        if search_query:
+            students = Student.objects.filter(name__startswith = search_query)
+        else:
+            students = None
+        return render(request, 'search.html', {'students': students})
+
+
+def change_department(request):
+    name = request.GET.get('name')
+    id = request.GET.get('id')
+    department = request.GET.get('department')
+    return render(request, 'Change Department.html', {'name': name, 'id': id, 'department': department})
+        

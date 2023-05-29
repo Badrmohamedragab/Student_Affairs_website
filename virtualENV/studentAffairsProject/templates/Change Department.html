@@ -2,65 +2,65 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Change Department</title>
-    <script src="../js/search.js"></script>
-    <link rel="icon" href="../Images/icon.png">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js">
-    </script>
-    <link rel="stylesheet" href="../css/change department.css">
+  <meta charset="UTF-8">
+  <title>Change Department</title>
+  <!-- <script src="../js/search.js"></script> -->
+  <link rel="icon" href="../static/images/icon.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js">
+  </script>
+  <link rel="stylesheet" href="../static/css/change department.css">
 </head>
 <nav>
-    <div class="nav">
-      <img src="../Images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
-      <a href="Home.html">LOGOUT</a>&emsp;
-      <a href="Search.html">Search</a>&emsp;
-      <a href="Update.html">Update</a>&emsp;
-      <a href="StudTable.html">Students Table</a>
-      <a href="Home-Registered.html">Home</a>&emsp;
+  <div class="nav">
+    <img src="../static/images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
+    <a href="Home.html">LOGOUT</a>&emsp;
+    <a href="Search.html">Search</a>&emsp;
+    <a href="Update.html">Update</a>&emsp;
+    <a href="StudTable.html">Students Table</a>
+    <a href="Home-Registered.html">Home</a>&emsp;
   </div>
 </nav>
 
 <body onload="SendID()">
-    <div class="container">
-      <div class="content">
-        <form id="update-form">
-      <h1 id="title" style="text-align: center;">Update Department</h1>
-            <div class="user-details">
-                <label>
-                    <span class="details">Student Name :</span>
-                    <input type="text" id="StdNam" readonly>
-                </label>
-            </div>
-            <br>
-            <br>
-            <div class="user-details">
-                <label>
-                    <span class="details" >ID :</span>
-                    <input type="text" id="id" required name="id" maxlength="20" minlength="7" readonly>
-                </label>
-            </div>
-            <br>
-            <br>
-            <div class="user-details">
-              <label>
-                <span class="details">Edit Department :</span>
-                <input id="Department" list="Dep" class="ListOfDepart">
-                  <datalist id="Dep">
-                  <option value="IS">
-                  <option value="CS">
-                  <option value="DS">
-                  <option value="AI">
-                  <option value="IT">
-                </datalist>
-              </label>
-            </div>
-            <br>
-          <input type="submit" value="Update" id="update">
-        </form>
+  <div class="container">
+    <div class="content">
+      <form id="update-form">
+        <h1 id="title" style="text-align: center;">Update Department</h1>
+        <div class="user-details">
+          <label>
+            <span class="details">Student Name :</span>
+            <input type="text" id="StdNam" readonly value="{{ name }}">
+          </label>
         </div>
+        <br>
+        <br>
+        <div class="user-details">
+          <label>
+            <span class="details">ID :</span>
+            <input type="text" id="id" name="id" value="{{ id }}" maxlength="20" minlength="7" readonly>
+          </label>
+        </div>
+        <br>
+        <br>
+        <div class="user-details">
+          <label>
+            <span class="details">Edit Department :</span>
+            <input id="Department" list="Dep" class="ListOfDepart" value="{{ department }}">
+            <datalist id="Dep">
+              <option value="IS">
+              <option value="CS">
+              <option value="DS">
+              <option value="AI">
+              <option value="IT">
+            </datalist>
+          </label>
+        </div>
+        <br>
+        <input type="submit" value="Update" id="update">
+      </form>
     </div>
-    <script>
+  </div>
+  <!-- <script>
       var form = document.getElementById('update-form');
       var department = document.getElementById('Department');
 
@@ -86,20 +86,21 @@
           window.location.href = "Home-Registered.html"
         }
       });
-    </script>
+    </script> -->
 
-    <footer id="footer-clean">
-      <div class="container">
-        <h3>About</h3>
-        <ul>
-          <li><a href="https://www.facebook.com/groups/fcaicu2025/" target="_blank">Faculty</a></li>
-          <li><a href="#">Team</a></li> <!-- Add  team page -->
-        </ul>
-      </div>
-      <div>
-        <p class="copyright">FCAI © 2023</p>
-      </div>
-    </footer>
+  <footer id="footer-clean">
+    <div class="container">
+      <h3>About</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/groups/fcaicu2025/" target="_blank">Faculty</a></li>
+        <li><a href="#">Team</a></li> <!-- Add  team page -->
+      </ul>
+    </div>
+    <div>
+      <p class="copyright">FCAI © 2023</p>
+    </div>
+  </footer>
 
 </body>
+
 </html>

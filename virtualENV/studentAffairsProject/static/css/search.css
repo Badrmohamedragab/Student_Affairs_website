@@ -1,9 +1,9 @@
 body {
-  background-image: url("../Images/Background.png");
-  background-repeat: no-repeat;
-  background-size: Cover;
-  background-attachment: fixed;
-  background-position: center;
+    background-image: url("../Images/Background.png");
+    background-repeat: no-repeat;
+    background-size: Cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 nav {

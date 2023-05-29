@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Search</title>
-    <link rel="stylesheet" href="../css/search.css">
-    <script src="../js/search.js"></script>
-    <link rel="icon" href="../Images/icon.png">
+    <link rel="stylesheet" href="../static/css/search.css">
+    <script src="../static/js/search.js"></script>
+    <link rel="icon" href="../static/images/icon.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js">
     </script>
 
@@ -15,7 +15,7 @@
 <body>
     <nav>
         <div id="nav">
-            <img src="../Images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
+            <img src="../static/images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
             <a href="Home.html">Home</a>&emsp;
             <a href="Login.html">Login</a>&emsp;
             <a href="Register.html">Register</a>&emsp;
@@ -26,15 +26,18 @@
     </nav>
 
     <div id="Body">
+        <form action="{% url 'search' %}" method="GET">
 
-        <div style="text-align: center" id="search_bar">
-            <label>
-                <input id="label" type="search" required placeholder="Enter name...">
-                <button type="submit" onclick="getSearchData() ;appear()">Search</button>
-            </label>
+            <div style="text-align: center" id="search_bar">
+                <label>
+                    <input id="label" type="search" required placeholder="Enter name..." name="q">
+                    <button type="submit">Search</button>
+                </label>
 
-        </div>
-        <table id="table" style="text-align: center; visibility: hidden;">
+            </div>
+        </form>
+        {%if students%}
+        <table id="table" style="text-align: center;">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -45,11 +48,26 @@
                 </tr>
             </thead>
             <tbody id="table-body">
+
+                {% for student in students %}
+                <tr>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.id }}</td>
+                    <td>{{ student.status }}</td>
+                    <td>{{ student.level }}</td>
+                    <td>{{ student.department }}</td>
+                    <td><a
+                            href="{% url 'Change Department' %}?name={{ student.name|urlencode }}&id={{ student.id|urlencode }}&department={{ student.department|urlencode }}">
+                            <button>Change Department</button></td></a>
+                </tr>
+                {% endfor %}
+                {% endif %}
             </tbody>
         </table>
+        <!--
         <div id="Err" hidden="hidden">
             <button onclick="NoError()">Ok</button>
-        </div>
+        </div>!-->
     </div>
 </body>
 
