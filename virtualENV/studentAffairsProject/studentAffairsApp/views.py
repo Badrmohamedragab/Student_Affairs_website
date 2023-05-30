@@ -11,28 +11,25 @@ def Home(request):
 def Register(request):
     return render(request, 'Register.html')
 
-def addStudent(request):
-    Name = request.POST["UserName"]
-    Id = request.POST["Id"]
-    email = request.POST["Email"]
-    Phone = request.POST["Phone"]
-    GPA = request.POST["GPA"]
-    Brith = request.POST["Brith"]
-    Level = request.POST["Level"]
-    Gender = request.POST["Gender"]
-    Department = request.POST["Department"]
-    Status = request.POST["Status"]
-    Password = request.POST["Password"]
-
-    student = Student(name = Name, id = Id, Email = email, phone = Phone, gpa = GPA,
-                      birthDate = Brith, gender = Gender, level = Level, status = Status,
-                      department = Department, password = Password)
-    
-    student.save()
-    return HttpResponse("Student added")
-    
-
 def Login(request):
+    if request.method == "POST":
+        Name = request.POST["Name"]
+        Id = request.POST["Id"]
+        email = request.POST["Email"]
+        Phone = request.POST["Phone"]
+        GPA = request.POST["GPA"]
+        Brith = request.POST["BirthDate"]
+        Level = request.POST["Level"]
+        Gender = request.POST["Gender"]
+        Department = request.POST["Department"]
+        Status = request.POST["Status"]
+        Password = request.POST["Password"]
+
+        student = Student(name = Name, id = Id, Email = email, phone = Phone, gpa = GPA,
+                        birthDate = Brith, gender = Gender, level = Level, status = Status,
+                        department = Department, password = Password)
+        
+        student.save()
     return render(request, 'Login.html')
 
 def search(request):

@@ -1,5 +1,5 @@
-body{
-  background-image: url("../Images/Register Background.jpg");
+body {
+  background-image: url("../images/Register Background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   align-items: center;
@@ -36,7 +36,7 @@ body{
   margin-left: 10px;
 }
 
-.nav #Register{
+.nav #Register {
   float: right;
   display: block;
   padding: 20px 20px;
@@ -48,11 +48,11 @@ body{
   margin-top: 3px;
 }
 
-.container{
+.container {
   FONT-WEIGHT: 100;
   max-width: 840px;
   width: 100%;
-  background-image: url("../Images/box Backgroung.jpg");
+  background-image: url("../images/box Backgroung.jpg");
   background-repeat: no-repeat;
   background-position-x: -3px;
   padding: 25px 30px;
@@ -61,13 +61,13 @@ body{
   margin: 15% auto;
 }
 
-.container .title{
+.container .title {
   font-size: 25px;
   font-weight: 500;
   position: relative;
 }
 
-.container .title::before{
+.container .title::before {
   content: "";
   position: absolute;
   left: 0;
@@ -78,25 +78,25 @@ body{
   background: linear-gradient(135deg, black, black);
 }
 
-.content form .user-details{
+.content form .user-details {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0 12px 0;
 }
 
-.container .input{
+.container .input {
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
 }
 
-span .details{
+span .details {
   display: block;
   font-weight: 500;
   margin-bottom: 5px;
 }
 
-label .details{
+label .details {
   display: block;
   font-weight: 500;
   margin-bottom: 5px;
@@ -114,14 +114,14 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-#passwordConfirm{
-  display:none;
-  z-index:-999;
-  position:relative;
+#passwordConfirm {
+  display: none;
+  z-index: -999;
+  position: relative;
   color: #c50000;
 }
 
-.Rad{
+.Rad {
   height: 42px;
   width: 95%;
   outline: none;
@@ -143,7 +143,7 @@ input[type=number] {
 
 }
 
-.Text2{
+.Text2 {
   height: 13px;
   transition: all 0.3s ease;
   margin-left: -76px;
@@ -151,11 +151,11 @@ input[type=number] {
   width: 20px;
 }
 
-.Text{
+.Text {
   margin-left: 105px;
 }
 
-input{
+input {
   height: 45px;
   width: 100%;
   outline: none;
@@ -167,11 +167,11 @@ input{
   transition: all 0.3s ease;
 }
 
-input:focus{
+input:focus {
   border: 4px solid #323c94;
 }
 
-select{
+select {
   height: 45px;
   width: 100%;
   outline: none;
@@ -183,15 +183,16 @@ select{
   transition: all 0.3s ease;
 }
 
-form .button{
+form .button {
   height: 45px;
   margin: 35px 0
 }
 
-label.error{
+label.error {
   color: #c50000;
 }
-.button button{
+
+.button button {
   background-color: #4177d9;
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.342);
   color: white;
@@ -210,7 +211,7 @@ label.error{
   transition: all 0.3s ease;
 }
 
-.button button:hover{
+.button button:hover {
   opacity: 0.6;
 }
 
@@ -224,36 +225,36 @@ label.error{
 }
 
 #footer-clean h3 {
-  margin-top:0;
-  margin-bottom:12px;
+  margin-top: 0;
+  margin-bottom: 12px;
   margin-left: 30px;
-  font-weight:bold;
-  font-size:16px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 #footer-clean ul {
-  padding:0;
-  list-style:none;
+  padding: 0;
+  list-style: none;
   margin-left: 50px;
-  line-height:1.6;
-  font-size:14px;
-  margin-bottom:0;
+  line-height: 1.6;
+  font-size: 14px;
+  margin-bottom: 0;
 }
 
 #footer-clean ul a {
-  color:inherit;
-  text-decoration:none;
-  opacity:0.8;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
 }
 
 #footer-clean ul a:hover {
-  opacity:1;
+  opacity: 1;
 }
 
 #footer-clean .copyright {
-  margin-left:50%;
-  font-size:13px;
-  opacity:0.6;
+  margin-left: 50%;
+  font-size: 13px;
+  opacity: 0.6;
 }
 
 #footer-clean {
@@ -266,34 +267,34 @@ label.error{
 }
 
 #footer-clean h3 {
-  margin-top:0;
-  margin-bottom:12px;
+  margin-top: 0;
+  margin-bottom: 12px;
   margin-left: 30px;
-  font-weight:bold;
-  font-size:16px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 #footer-clean ul {
-  padding:0;
-  list-style:none;
+  padding: 0;
+  list-style: none;
   margin-left: 50px;
-  line-height:1.6;
-  font-size:14px;
-  margin-bottom:0;
+  line-height: 1.6;
+  font-size: 14px;
+  margin-bottom: 0;
 }
 
 #footer-clean ul a {
-  color:inherit;
-  text-decoration:none;
-  opacity:0.8;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
 }
 
 #footer-clean ul a:hover {
-  opacity:1;
+  opacity: 1;
 }
 
 #footer-clean .copyright {
-  margin-left:50%;
-  font-size:13px;
-  opacity:0.6;
+  margin-left: 50%;
+  font-size: 13px;
+  opacity: 0.6;
 }

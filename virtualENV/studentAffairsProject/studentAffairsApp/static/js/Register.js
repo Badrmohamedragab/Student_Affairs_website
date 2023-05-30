@@ -1,5 +1,5 @@
-$(document).ready(function() {
-    $.validator.addMethod("passwordMatch", function(value) {
+$(document).ready(function () {
+    $.validator.addMethod("passwordMatch", function (value) {
         let password = $("#Pass").val();
         return password === value;
     }, "Passwords do not match.");
@@ -18,21 +18,21 @@ $(document).ready(function() {
             Id: {
                 required: true
             },
-            Phone:{
-              required: true,
-              minlength: 11,
-              maxlength: 11
+            Phone: {
+                required: true,
+                minlength: 11,
+                maxlength: 11
             },
-            GPA:{
+            GPA: {
                 required: true
             },
-            BirthDate:{
+            BirthDate: {
                 required: true
             },
-            Level:{
+            Level: {
                 required: true
             },
-            Department:{
+            Department: {
                 required: true
             },
             Password: {
@@ -50,19 +50,19 @@ $(document).ready(function() {
                 required: "Please enter a valid name.",
                 minlength: "Name must be at least 3 characters."
             },
-            Email:{
+            Email: {
                 required: "Please enter an email.",
                 email: "Please enter valid email."
             },
             Phone: {
                 required: "Please enter a phone.",
-                minlength : "Please enter valid phone (11 digits).",
-                maxlength : "Please enter valid phone."
+                minlength: "Please enter valid phone (11 digits).",
+                maxlength: "Please enter valid phone."
             },
             Id: {
                 required: "Please enter an id.",
             },
-            GPA:{
+            GPA: {
                 required: "Please enter a valid GPA."
             },
             Department: {
