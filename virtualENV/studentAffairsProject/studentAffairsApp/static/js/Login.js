@@ -1,4 +1,4 @@
-function validate() {
+function validatee() {
     let username = document.getElementById("un").value;
     let password = document.getElementById("pass").value;
     let student = JSON.parse(localStorage.getItem(username));
@@ -18,3 +18,7 @@ function validate() {
         return false;
     }
 }
+
+//us={{admin.username}}
+//pass={{admin.password}}
+
