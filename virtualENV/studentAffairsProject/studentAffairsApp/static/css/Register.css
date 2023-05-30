@@ -50,12 +50,11 @@ body{
 
 .container{
   FONT-WEIGHT: 100;
-  max-width: 700px;
+  max-width: 840px;
   width: 100%;
   background-image: url("../Images/box Backgroung.jpg");
   background-repeat: no-repeat;
-  background-position-y: -1px;
-  background-position-x: -1px;
+  background-position-x: -3px;
   padding: 25px 30px;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgb(0 0 0 / 15%);
@@ -103,14 +102,33 @@ label .details{
   margin-bottom: 5px;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#passwordConfirm{
+  display:none;
+  z-index:-999;
+  position:relative;
+  color: #c50000;
+}
+
 .Rad{
   height: 42px;
-  width: 100%;
+  width: 95%;
   outline: none;
   font-size: 16px;
   border-radius: 5px;
   padding-left: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #ffffff;
   border-bottom-width: 2px;
   transition: all 0.3s ease;
   margin-top: -5px;
@@ -149,6 +167,10 @@ input{
   transition: all 0.3s ease;
 }
 
+input:focus{
+  border: 4px solid #323c94;
+}
+
 select{
   height: 45px;
   width: 100%;
@@ -166,6 +188,9 @@ form .button{
   margin: 35px 0
 }
 
+label.error{
+  color: #c50000;
+}
 .button button{
   background-color: #4177d9;
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.342);
