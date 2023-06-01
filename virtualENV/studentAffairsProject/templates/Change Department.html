@@ -4,20 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Change Department</title>
-  <!-- <script src="../js/search.js"></script> -->
-  <link rel="icon" href="../static/images/icon.png">
+  <link rel="icon" href="/../static/images/icon.png">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js">
   </script>
-  <link rel="stylesheet" href="../static/css/change department.css">
+  <link rel="stylesheet" href="/../static/css/changeDepartment.css">
 </head>
 <nav>
   <div class="nav">
-    <img src="../static/images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
+    <img src="/../static/images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
     <a href="Home.html">LOGOUT</a>&emsp;
-    <a href="Search.html">Search</a>&emsp;
-    <a href="Update.html">Update</a>&emsp;
-    <a href="StudTable.html">Students Table</a>
-    <a href="Home-Registered.html">Home</a>&emsp;
+    <a id="searchNav">SEARCH</a>&emsp;
+    <a href="Home-Registered.html">HOME</a>&emsp;
   </div>
 </nav>
 
@@ -60,47 +57,6 @@
       </form>
     </div>
   </div>
-  <!-- <script>
-      var form = document.getElementById('update-form');
-      var department = document.getElementById('Department');
-
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        var id = document.getElementById('id').value;
-        var department = document.getElementById('Department').value;
-
-        var student = JSON.parse(localStorage.getItem(id));
-
-
-        if (student.Department === document.getElementById("Department").value) {
-          swal("Same department", "You didn't change the department", "error", {
-            button: "Ok",
-          });
-        }
-        else {
-          student.Department = department;
-          localStorage.setItem(id, JSON.stringify(student));
-          swal("Done!", "You change the department successfully", "success", {
-            button: "Ok",
-          });
-          window.location.href = "Home-Registered.html"
-        }
-      });
-    </script> -->
-
-  <footer id="footer-clean">
-    <div class="container">
-      <h3>About</h3>
-      <ul>
-        <li><a href="https://www.facebook.com/groups/fcaicu2025/" target="_blank">Faculty</a></li>
-        <li><a href="#">Team</a></li> <!-- Add  team page -->
-      </ul>
-    </div>
-    <div>
-      <p class="copyright">FCAI © 2023</p>
-    </div>
-  </footer>
-
 </body>
 
 </html>

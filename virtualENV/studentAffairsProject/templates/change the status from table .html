@@ -1,135 +1,122 @@
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <link rel="icon" href="../Images/icon.png">
-        <link rel="stylesheet" href="../css/change%20status.css">
-        <meta charset="UTF-8">
-        <title>Students Table</title>
-    </head>
+<head>
+  <link rel="icon" href="/../static/images/icon.png">
+  <link rel="stylesheet" href="/../static/css/change%20status.css">
+  <meta charset="UTF-8">
+  <title>Students Table</title>
+</head>
 
-    <body>
-        <script>
-            function Done() {
+<body>
+  <script>
+    function Done() {
 
-  const rows = document.querySelectorAll("#tableBody tr"); // get all rows in the table
+      const rows = document.querySelectorAll("#tableBody tr"); // get all rows in the table
 
-  for (let i = 0; i < rows.length; i++) { // loop through each row and get the student object
-    const cells = rows[i].querySelectorAll("td");
-    const id = cells[1].textContent; // get the student ID
+      for (let i = 0; i < rows.length; i++) { // loop through each row and get the student object
+        const cells = rows[i].querySelectorAll("td");
+        const id = cells[1].textContent; // get the student ID
 
-    const student = JSON.parse(localStorage.getItem(id)); // get the existing student object from localStorage
+        const student = JSON.parse(localStorage.getItem(id)); // get the existing student object from localStorage
 
-    const statusRadio = cells[2].querySelector("input[type='radio']:checked"); // update the status if the radio button was checked
-    if (statusRadio) {
-      student.Status = statusRadio.value;
+        const statusRadio = cells[2].querySelector("input[type='radio']:checked"); // update the status if the radio button was checked
+        if (statusRadio) {
+          student.Status = statusRadio.value;
+        }
+
+        localStorage.setItem(id, JSON.stringify(student)); // save the updated student object to localStorage
+      }
     }
 
-    localStorage.setItem(id, JSON.stringify(student)); // save the updated student object to localStorage
-  }
-}
+  </script>
 
-            </script>
+  <div id="Target">
+    <nav class="nav">
+      <div>
+        <img src="/../static/images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
+        <a href="{% url 'Home' %}">LOGOUT</a>&emsp;
+        <a id="STUDENT">STUDENT TABLE</a>&emsp;
+        <a href="{% url 'Home-Registered' %}">HOME</a>&emsp;
 
-        <div id="Target">
-          <nav class="nav">
-            <div>
-              <img src="../Images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
-              <a href="#footer-clean">ABOUT US</a>&emsp;
-              <a href="Home-Registered.html">LOGOUT</a>&emsp;
-              <a id="STUDENT" >STUDENT TABLE</a>&emsp;
-              <a href="Home.html">Home</a>&emsp;
+      </div>
+    </nav>
 
-            </div>
-          </nav>
+    <br>
 
-            <br>
+    <div style="text-align: -webkit-center; padding-top: 50px">
+      <table id="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Status</th>
+            <th>Level</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <script>
+            const tableBody = document.getElementById("tableBody");
 
-            <div style="text-align: -webkit-center; padding-top: 50px">
-                <table id="table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>ID</th>
-                            <th>Status</th>
-                            <th>Level</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tableBody">
-                        <script>
-                            const tableBody = document.getElementById("tableBody");
+            for (let i = 0; i < localStorage.length; i++) {
+              const key = localStorage.key(i);
+              const student = JSON.parse(localStorage.getItem(key));
 
-                            for (let i = 0; i < localStorage.length; i++) {
-                                const key = localStorage.key(i);
-                                const student = JSON.parse(localStorage.getItem(key));
+              const row = document.createElement("tr");
 
-                                const row = document.createElement("tr");
+              const nameCell = document.createElement("td");
+              nameCell.textContent = student.Name;
 
-                                const nameCell = document.createElement("td");
-                                nameCell.textContent = student.Name;
+              const idCell = document.createElement("td");
+              idCell.textContent = student.ID;
 
-                                const idCell = document.createElement("td");
-                                idCell.textContent = student.ID;
+              const statusCell = document.createElement("td");
+              const radioGroup = document.createElement("div");
 
-                                const statusCell = document.createElement("td");
-                                const radioGroup = document.createElement("div");
+              // create radio buttons for active and inactive
+              const activeRadio = document.createElement("input");
+              activeRadio.type = "radio";
+              activeRadio.name = `${student.ID}-status`;
+              activeRadio.value = "Active";
+              activeRadio.checked = student.Status === "Active";
 
-                                // create radio buttons for active and inactive
-                                const activeRadio = document.createElement("input");
-                                activeRadio.type = "radio";
-                                activeRadio.name = `${student.ID}-status`;
-                                activeRadio.value = "Active";
-                                activeRadio.checked = student.Status === "Active";
+              const activeLabel = document.createElement("label");
+              activeLabel.textContent = "Active";
+              activeLabel.setAttribute("for", `${student.ID}-status`);
 
-                                const activeLabel = document.createElement("label");
-                                activeLabel.textContent = "Active";
-                                activeLabel.setAttribute("for", `${student.ID}-status`);
+              const inactiveRadio = document.createElement("input");
+              inactiveRadio.type = "radio";
+              inactiveRadio.name = `${student.ID}-status`;
+              inactiveRadio.value = "Inactive";
+              inactiveRadio.checked = student.Status === "Inactive";
 
-                                const inactiveRadio = document.createElement("input");
-                                inactiveRadio.type = "radio";
-                                inactiveRadio.name = `${student.ID}-status`;
-                                inactiveRadio.value = "Inactive";
-                                inactiveRadio.checked = student.Status === "Inactive";
+              const inactiveLabel = document.createElement("label");
+              inactiveLabel.textContent = "Inactive";
+              inactiveLabel.setAttribute("for", `${student.ID}-status`);
 
-                                const inactiveLabel = document.createElement("label");
-                                inactiveLabel.textContent = "Inactive";
-                                inactiveLabel.setAttribute("for", `${student.ID}-status`);
+              radioGroup.appendChild(activeRadio);
+              radioGroup.appendChild(activeLabel);
+              radioGroup.appendChild(inactiveRadio);
+              radioGroup.appendChild(inactiveLabel);
 
-                                radioGroup.appendChild(activeRadio);
-                                radioGroup.appendChild(activeLabel);
-                                radioGroup.appendChild(inactiveRadio);
-                                radioGroup.appendChild(inactiveLabel);
+              statusCell.appendChild(radioGroup);
 
-                                statusCell.appendChild(radioGroup);
+              const levelCell = document.createElement("td");
+              levelCell.textContent = student.Level;
 
-                                const levelCell = document.createElement("td");
-                                levelCell.textContent = student.Level;
+              row.appendChild(nameCell);
+              row.appendChild(idCell);
+              row.appendChild(statusCell);
+              row.appendChild(levelCell);
+              tableBody.appendChild(row);
+            }
+          </script>
+        </tbody>
+      </table>
+      <br>
+      <button type="submit" onclick="Done()"> Save</button>
+    </div>
+  </div>
+</body>
 
-                                row.appendChild(nameCell);
-                                row.appendChild(idCell);
-                                row.appendChild(statusCell);
-                                row.appendChild(levelCell);
-                                tableBody.appendChild(row);
-                            }
-                        </script>
-                    </tbody>
-                </table>
-                <br>
-                <button type="submit" onclick="Done()"> Save</button>
-            </div>
-        </div>
-        <footer id="footer-clean">
-          <div class="container">
-            <h3>About</h3>
-            <ul>
-              <li><a href="https://www.facebook.com/groups/fcaicu2025/" target="_blank">Faculty</a></li>
-              <li><a href="#">Team</a></li> <!-- Add  team page -->
-            </ul>
-          </div>
-          <div>
-            <p class="copyright">FCAI © 2023</p>
-          </div>
-        </footer>
-
-    </body>
 </html>

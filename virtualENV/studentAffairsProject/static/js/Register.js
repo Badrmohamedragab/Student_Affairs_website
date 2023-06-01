@@ -82,6 +82,16 @@ $(document).ready(function () {
             PassConf: {
                 required: "Please confirm your password.",
             }
+        },
+        submitHandler: function (form) {
+            swal({
+                title: "Success!",
+                icon: "success",
+                text: "Your registration successed.",
+                button: "ok",
+            }).then(() => {
+                form.submit()
+            })
         }
     });
 });

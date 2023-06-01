@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <title>Student Affairs (Home Page)</title>
     <meta name="Login" content="Phase one Student Affairs website Home Page">
-    <link rel="stylesheet" href="../static/css/Login.css">
-    <script src="../static/js/Login.js"></script>
+    <link rel="stylesheet" href="/../static/css/Login.css">
+    <script src="/../static/js/Login.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
-    <link rel="icon" href="../static/images/icon.png">
+    <link rel="icon" href="/../static/images/icon.png">
 
 </head>
 
@@ -17,18 +17,18 @@
     <nav>
         <div class="nav">
 
-            <img src="../static/images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
+            <img src="/../static/images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
             <a href="#footer-clean">ABOUT US</a>&emsp;
-            <a id="Login">Login</a>&emsp;
-            <a href="{% url 'Register' %}">Register</a>&emsp;
-            <a href="{% url 'Home' %}">Home</a>&emsp;
+            <a id="Login">LOGIN</a>&emsp;
+            <a href="{% url 'Register' %}">REGISTER</a>&emsp;
+            <a href="{% url 'Home' %}">HOME</a>&emsp;
         </div>
 
     </nav>
     <br>
 
     <div class="id">
-        <img src="../static/images/login.png" alt="Error" style="width: 100px; height: 100px;">
+        <img src="/../static/images/login.png" alt="Error" style="width: 100px; height: 100px;">
         <br>
         <h1>Welcome To FCAI Student Affairs </h1>
         <br>
@@ -37,7 +37,7 @@
             <div class="sii">
                 <p>Sign in with your username and password</p>
             </div>
-            <label for="un"><b>User Name</b></label>
+            <label for="un"><b>E-mail</b></label>
             <br>
             <input id="email" type="text" placeholder="User Name" name="email" required>
 
@@ -48,13 +48,13 @@
                 required>
             <br>
             {% if messages %}
-                <div class="alert" style="color: #A61420">
-                    {% for message in messages %}
-                        <div class="alert-message {% if message.tags %}{{ message.tags }}{% endif %}">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
+            <div class="alert" style="color: #A61420">
+                {% for message in messages %}
+                <div class="alert-message {% if message.tags %}{{ message.tags }}{% endif %}">
+                    {{ message }}
                 </div>
+                {% endfor %}
+            </div>
             {% endif %}
 
             <div>
@@ -67,12 +67,11 @@
 
             <div>
                 <a href="Home.html"></a>
-                <button class="si" type="submit" >Sign in</button>&emsp;
-
-
+                <button class="si" type="submit">Sign in</button>&emsp;
             </div>
+
             <b>Don't have an account ?</b>
-            <a id="rgn" href="Register.html">Register Now</a>
+            <a id="rgn" href="/Home/Register">Register Now</a>
         </form>
     </div>
 

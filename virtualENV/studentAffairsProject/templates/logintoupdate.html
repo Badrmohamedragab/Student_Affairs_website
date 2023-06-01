@@ -1,77 +1,65 @@
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Update Data</title>
-<script src="../js/Update.js"></script>
-            <link rel="stylesheet" href="../css/logintoupdate.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js">
-</script>
+  <meta charset="UTF-8">
+  <title>Update Data</title>
+  <script src="/../static/js/Update.js"></script>
+  <link rel="stylesheet" href="/../static/css/logintoupdate.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js">
+  </script>
 
 
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-    <nav class="nav">
-      <div>
-        <img src="../Images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
-        <a href="#footer-clean">ABOUT US</a>&emsp;
-        <a href="Home.html">LOGOUT</a>&emsp;
-        <a ID="Update">UPDATE</a>&emsp;
-        <a href="Home.html">Home</a>&emsp;
+  <nav class="nav">
+    <div>
+      <img src="/../static/images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
+      <a href="{% url 'Home' %}">LOGOUT</a>&emsp;
+      <a ID="Update">UPDATE</a>&emsp;
+      <a href="{% url 'Home-Registered' %}">HOME</a>&emsp;
+    </div>
+  </nav>
+
+  <form>
+    <div class="box">
+      <div class="container">
+
+        <div class="top">
+          <header>Enter ID</header>
+        </div>
+
+        <div class="input-field">
+          <input type="text" class="input" placeholder="ID" id="ID">
+          <i class='bx bx-user'></i>
+        </div>
+
+        <script>
+
+          localStorage.setItem("2020", JSON.stringify(Stud))
+          function validate() {
+            let username = document.getElementById("ID").value;
+            let student = JSON.parse(localStorage.getItem(username));
+
+            if (localStorage.getItem(username) !== null && username === student.ID) {
+              data(document.getElementById("ID").value);
+            }
+            else {
+              swal("id not found", "Please check your id", "error", { //sweet alert
+                button: "try again",
+              });
+            }
+          }
+        </script>
+        <div class="input-field">
+          <button class="submit" type="button" onclick="validate()">Show Data</button>
+        </div>
       </div>
-    </nav>
-
-    <form>
-        <div class="box">
-            <div class="container">
-
-                <div class="top">
-                    <header>Enter ID</header>
-                </div>
-
-                <div class="input-field">
-                    <input type="text" class="input" placeholder="ID" id="ID">
-                    <i class='bx bx-user'></i>
-                </div>
-
-                <script>
-
-                  localStorage.setItem("2020", JSON.stringify(Stud))
-                  function validate() {
-                      let username = document.getElementById("ID").value;
-                      let student = JSON.parse(localStorage.getItem(username));
-
-                      if (localStorage.getItem(username) !== null && username === student.ID) {
-                          data(document.getElementById("ID").value);
-                      }
-                      else {
-                          swal("id not found", "Please check your id", "error", { //sweet alert
-                              button: "try again",
-                          });
-                      }
-                  }
-              </script>
-                <div class="input-field">
-                    <button class="submit" type="button" onclick="validate()">Show Data</button>
-                </div>
-            </div>
-        </div>
-      <footer id="footer-clean">
-        <div class="container">
-          <h3>About</h3>
-          <ul>
-            <li><a href="https://www.facebook.com/groups/fcaicu2025/" target="_blank">Faculty</a></li>
-            <li><a href="#">Team</a></li> <!-- Add  team page -->
-          </ul>
-        </div>
-        <div>
-          <p class="copyright">FCAI © 2023</p>
-        </div>
-      </footer>
-
-
-    </form>
+    </div>
+  </form>
 </body>
+
 </html>

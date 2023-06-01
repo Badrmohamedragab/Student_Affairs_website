@@ -12,13 +12,9 @@ function validatee() {
         return false;
     } else {
 
-    swal("Login failed", "Please check your username and password", "error", { //sweet alert
+        swal("Login failed", "Please check your username and password", "error", { //sweet alert
             button: "try again",
         });
         return false;
     }
 }
-
-//us={{admin.username}}
-//pass={{admin.password}}
-

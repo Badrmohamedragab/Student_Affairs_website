@@ -1,5 +1,5 @@
 body {
-    background-image: url("../Images/Background.png");
+    background-image: url("../images/Background.png");
     background-repeat: no-repeat;
     background-size: Cover;
     background-attachment: fixed;
@@ -139,4 +139,10 @@ tr:nth-child(even) {
 td:hover {
     background-color: rgba(0, 0, 0, 0.1);
 
+}
+
+nav #SearchNAV {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    margin-top: 3px;
 }

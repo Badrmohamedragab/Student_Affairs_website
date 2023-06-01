@@ -1,16 +1,17 @@
 body {
-    background-image: url("../Images/b.png");
+    background-image: url("../images/b.png");
     background-repeat: no-repeat;
     background-size: Cover;
     background-attachment: fixed;
     background-position: center;
 
 }
-h1{
+
+h1 {
     text-align: center;
 }
 
-label{
+label {
     font-size: 20px;
     font-weight: 500;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -18,14 +19,15 @@ label{
     text-align: left;
 }
 
-form{
-    width:35rem;
+form {
+    width: 35rem;
     text-align: left;
     margin: auto;
-    color:whitesmoke;
+    color: whitesmoke;
 }
 
-input[type=text], input[type=password]{
+input[type=text],
+input[type=password] {
     width: 100%;
     margin: 10px 0;
     border-radius: 5px;
@@ -36,7 +38,7 @@ input[type=text], input[type=password]{
 
 }
 
-input{
+input {
     width: 10%;
     margin: 10px 0;
     border-radius: 5px;
@@ -45,7 +47,7 @@ input{
 }
 
 
-.cb1{
+.cb1 {
     width: 20px;
     height: 20px;
     margin: 10px 0;
@@ -66,6 +68,7 @@ button {
     border-color: cornflowerblue;
     border-style: solid;
 }
+
 .si {
     background-color: #4177d9;
     color: white;
@@ -75,7 +78,8 @@ button {
     width: 100%;
     font-size: 18px;
 }
-.sii{
+
+.sii {
 
     text-align: left;
 }
@@ -86,7 +90,7 @@ button:hover {
 }
 
 .id {
-    background-image: url("../Images/1.png");
+    background-image: url("../images/1.png");
     width: 600px;
     height: auto;
     padding: 20px;
@@ -129,25 +133,24 @@ nav a:hover {
     margin-top: 3px;
 }
 
-nav #Login{
-  float: right;
-  display: block;
-  padding: 20px 20px;
-  height: 25px;
-  text-decoration: none;
-  text-transform: uppercase;
-  background-color: rgb(0, 0, 0);
-  color: white;
-  margin-top: 3px;
+nav #Login {
+    float: right;
+    display: block;
+    padding: 20px 20px;
+    height: 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    margin-top: 3px;
 }
 
-#rgn{
+#rgn {
     text-decoration: none;
 
 }
 
-#rgn:hover
-{
+#rgn:hover {
     color: #000000;
     margin-top: 3px;
 
@@ -162,20 +165,20 @@ nav img {
 }
 
 .swal-button {
-  background-color: #4177d9;
+    background-color: #4177d9;
 }
 
 .swal-button:hover {
-  background-color: #4177d9;
-  opacity: 0.6;
+    background-color: #4177d9;
+    opacity: 0.6;
 }
 
 .swal-icon--error {
-  border-color: #4177d9;
+    border-color: #4177d9;
 }
 
 .swal-icon--error__line {
-  background-color: #4177d9;
+    background-color: #4177d9;
 }
 
 #footer-clean {
@@ -188,37 +191,38 @@ nav img {
 }
 
 #footer-clean h3 {
-    margin-top:0;
-    margin-bottom:12px;
+    margin-top: 0;
+    margin-bottom: 12px;
     margin-left: 30px;
-    font-weight:bold;
-    font-size:16px;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 #footer-clean ul {
-    padding:0;
-    list-style:none;
+    padding: 0;
+    list-style: none;
     margin-left: 50px;
-    line-height:1.6;
-    font-size:14px;
-    margin-bottom:0;
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 0;
 }
 
 #footer-clean ul a {
-    color:inherit;
-    text-decoration:none;
-    opacity:0.8;
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
 }
 
 #footer-clean ul a:hover {
-    opacity:1;
+    opacity: 1;
 }
 
 #footer-clean .copyright {
-    margin-left:50%;
-    font-size:13px;
-    opacity:0.6;
+    margin-left: 50%;
+    font-size: 13px;
+    opacity: 0.6;
 }
+
 .alert {
     padding: 10px;
     margin-bottom: 15px;

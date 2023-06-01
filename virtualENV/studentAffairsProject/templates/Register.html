@@ -6,19 +6,19 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
-  <script src="../static/js/Register.js"></script>
-  <link href="../static/css/Register.css" rel="stylesheet">
+  <script src="/../static/js/Register.js"></script>
+  <link href="/../static/css/Register.css" rel="stylesheet">
   <link rel="icon" href="../static/images/icon.png">
 </head>
 
 <body>
   <nav class="nav">
     <div>
-      <img src="../static/images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
+      <img src="/../static/images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
       <a href="#footer-clean">ABOUT US</a>&emsp;
       <a href="{% url 'Login' %}">LOGIN</a>&emsp;
       <a id="Register">REGISTER</a>&emsp;
-      <a href="{% url 'Home' %}">Home</a>&emsp;
+      <a href="{% url 'Home' %}">HOME</a>&emsp;
 
     </div>
   </nav>
@@ -26,7 +26,7 @@
   <div class="container">
     <div class="title">Registration</div>
     <div class="content">
-      <form action="{% url 'Login' %}" method="POST" id="validateForm" name="validateForm"> {% csrf_token %}
+      <form method="POST" id="validateForm" name="validateForm"> {% csrf_token %}
         <div class="user-details">
 
           <div class="input">
