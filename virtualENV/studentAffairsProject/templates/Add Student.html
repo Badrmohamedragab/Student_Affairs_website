@@ -6,8 +6,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
-  <script src="/../static/js/Register.js"></script>
-  <link href="/../static/css/Register.css" rel="stylesheet">
+  <script src="/../static/js/Add Student.js"></script>
+  <link href="/../static/css/Add Student.css" rel="stylesheet">
   <link rel="icon" href="../static/images/icon.png">
 </head>
 
@@ -15,10 +15,9 @@
   <nav class="nav">
     <div>
       <img src="/../static/images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
-      <a href="#footer-clean">ABOUT US</a>&emsp;
-      <a href="{% url 'Login' %}">LOGIN</a>&emsp;
+      <a href="{% url 'Home' %}">LOGOUT</a>&emsp;
       <a id="Register">REGISTER</a>&emsp;
-      <a href="{% url 'Home' %}">HOME</a>&emsp;
+      <a href="{% url 'Home-Registered' %}">HOME</a>&emsp;
 
     </div>
   </nav>
@@ -59,8 +58,22 @@
 
           <div class="input">
             <label>
+              <span class="details">GPA</span>
+              <input id="GPA" name="GPA" type="number" placeholder="Enter your GPA">
+            </label>
+          </div>
+
+          <div class="input">
+            <label>
               <span class="details">Enter your Brith Date</span>
               <input id="Dob" name="BirthDate" type="Date" placeholder="Enter your Brith Date">
+            </label>
+          </div>
+
+          <div class="input">
+            <label>
+              <span class="details">Enter your Level</span>
+              <input type="number" name="Level" placeholder="Enter your Level" id="Lev">
             </label>
           </div>
 
@@ -72,6 +85,27 @@
                 <option value="Female">Female</option>
               </select>
             </label>
+          </div>
+
+          <div class="input">
+            <label>
+              <span class="details">Enter your Department</span>
+              <input type="text" name="Department" placeholder="Enter your Department" id="Depart">
+            </label>
+          </div>
+
+          <div class="input">
+            <label>
+              <span class="details">Enter your Status</span>
+            </label>
+
+            <div class="Rad">
+              <label for="Active">Active</label>
+              <input class="Radio" type="radio" id="Active" name="Status" value="Active" checked>
+
+              <label class="Text" for="Inactive">Inactive</label>
+              <input class="Text2" type="radio" id="Inactive" name="Status" value="Inactive">
+            </div>
           </div>
 
           <div class="input">
@@ -90,25 +124,12 @@
         </div>
 
         <div class="button">
-          <button type="submit">Register</button>
+          <button type="submit">Add Student</button>
         </div>
 
       </form>
     </div>
   </div>
-
-  <footer id="footer-clean">
-    <div class="Footer">
-      <h3>About</h3>
-      <ul>
-        <li><a href="https://www.facebook.com/groups/fcaicu2025/" target="_blank">Faculty</a></li>
-        <li><a href="#">Team</a></li> <!-- Add  team page -->
-      </ul>
-    </div>
-    <div>
-      <p class="copyright">FCAI © 2023</p>
-    </div>
-  </footer>
 </body>
 
 </html>

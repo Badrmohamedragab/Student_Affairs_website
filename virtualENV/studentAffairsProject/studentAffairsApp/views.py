@@ -18,6 +18,24 @@ def Register(request):
         Id = request.POST["Id"]
         email = request.POST["Email"]
         Phone = request.POST["Phone"]
+        Brith = request.POST["BirthDate"]
+        Gender = request.POST["Gender"]
+        Password = request.POST["Password"]
+
+        admin = Admin(name = Name, id = Id, Email = email, phone = Phone,
+                        birthDate = Brith, gender = Gender, password = Password)
+        
+        admin.save()
+    
+    return render(request, 'Register.html')
+    
+
+def AddStudent(request):
+    if request.method == "POST":
+        Name = request.POST["Name"]
+        Id = request.POST["Id"]
+        email = request.POST["Email"]
+        Phone = request.POST["Phone"]
         GPA = request.POST["GPA"]
         Brith = request.POST["BirthDate"]
         Level = request.POST["Level"]
@@ -32,8 +50,7 @@ def Register(request):
         
         student.save()
     
-    return render(request, 'Register.html')
-    
+    return render(request, 'Add Student.html')
 
 def Login(request):
     if request.method == 'POST':

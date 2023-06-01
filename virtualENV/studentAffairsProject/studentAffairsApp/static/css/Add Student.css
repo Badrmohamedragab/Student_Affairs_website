@@ -121,6 +121,40 @@ input[type=number] {
   color: #c50000;
 }
 
+.Rad {
+  height: 42px;
+  width: 95%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ffffff;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  margin-top: -5px;
+}
+
+.Radio {
+  height: 13px;
+  width: 15px;
+  float: left;
+  margin-top: 11px;
+  transition: all 0.3s ease;
+
+}
+
+.Text2 {
+  height: 13px;
+  transition: all 0.3s ease;
+  margin-left: -76px;
+  margin-top: 11px;
+  width: 20px;
+}
+
+.Text {
+  margin-left: 105px;
+}
+
 input {
   height: 45px;
   width: 100%;

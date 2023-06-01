@@ -12,4 +12,5 @@ urlpatterns = [
     path('Home-Registered/logintoupdate/', views.loginToUpdate, name='loginToUpdate'),
     path('Home-Registered/logintoupdate/Update', views.Update, name='Update'),
     path('Home-Registered/change the status from table/', views.changeStatus, name='changeStatus'),
+    path('Home-Registered/Add Student/', views.AddStudent, name='AddStudent'),
 ]
