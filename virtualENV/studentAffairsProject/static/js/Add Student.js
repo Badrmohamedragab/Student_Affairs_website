@@ -42,7 +42,7 @@ $(document).ready(function () {
             },
             PassConf: {
                 required: true,
-                passwordMatch: true // Use the custom validation rule for password matching
+                passwordMatch: true
             }
         },
         messages: {

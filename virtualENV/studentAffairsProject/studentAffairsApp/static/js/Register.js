@@ -84,6 +84,7 @@ $(document).ready(function () {
             }
         },
         submitHandler: function (form) {
+            console.log("Submit handler called.");
             swal({
                 title: "Success!",
                 icon: "success",
