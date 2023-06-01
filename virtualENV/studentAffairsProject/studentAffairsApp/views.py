@@ -78,10 +78,17 @@ def search(request):
 
 
 def change_department(request):
+    if request.method == "POST":
+        dep = request.POST['depart']
+        id = request.POST['id']
+        student = Student.objects.get(id=id)
+        student.department = dep
+        student.save()
     name = request.GET.get('name')
     id = request.GET.get('id')
     department = request.GET.get('department')
     return render(request, 'Change Department.html', {'name': name, 'id': id, 'department': department})
+
         
 
 def loginToUpdate(request):
