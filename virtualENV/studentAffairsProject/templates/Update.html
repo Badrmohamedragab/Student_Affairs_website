@@ -1,116 +1,150 @@
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Data</title>
+    <script src="/../static/js/Update.js"></script>
+    <link rel="stylesheet" href="/../static/css/update.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Student Data</title>
-  <script src="/../static/js/Update.js"></script>
-  <link rel="stylesheet" href="/../static/css/update.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
-</head>
+  <body onload="showdata()">
+    <nav>
+      <div class="nav">
+        <img
+          src="/../static/images/Logo%20of%20Cairo.jpg"
+          alt="no photo"
+          class="cairo_photo"
+        />
+        <a href="{% url 'Home' %}">LOGOUT</a>&emsp;
+        <a id="Update" href="Update.html">UPDATE</a>&emsp;
+        <a href="{% url 'Home-Registered' %}">HOME</a>&emsp;
+      </div>
+    </nav>
 
-<body onload="showdata()">
-  <nav>
-    <div class="nav">
-      <img src="/../static/images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
-      <a href="{% url 'Home' %}">LOGOUT</a>&emsp;
-      <a id="Update" href="Update.html">UPDATE</a>&emsp;
-      <a href="{% url 'Home-Registered' %}">HOME</a>&emsp;
-    </div>
-  </nav>
+    <div class="container">
+      <div class="content">
+        <form method="POST" id="validateForm" name="validateForm">
+          {% csrf_token %}
+          <div class="user-details">
+            <div class="input">
+              <label>
+                <span class="details">User Name</span>
+                <input
+                  name="n"
+                  type="text"
+                  placeholder="username"
+                  id="username"
+                  value="{{ name }}"
+                />
+              </label>
+            </div>
 
-  <div class="container">
-    <div class="content">
-      <form>
-        <div class="user-details">
+            <div class="input">
+              <label>
+                <span class="details">ID</span>
+                <input
+                  readonly
+                  type="text"
+                  minlength="8"
+                  maxlength="8"
+                  name="ID"
+                  id="ID"
+                  value="{{ id }}"
+                />
+              </label>
+            </div>
 
-          <div class="input">
-            <label>
-              <span class="details">User Name</span>
-              <input type="text" placeholder="username" id="username">
-            </label>
-          </div>
+            <div class="input">
+              <label>
+                <span class="details">Email</span>
+                <input id="E" type="email" name="e" value="{{ email }}" />
+              </label>
+            </div>
 
-          <div class="input">
-            <label>
-              <span class="details">ID</span>
-              <input readonly type="text" minlength="8" maxlength="8" name="ID" id="ID">
-            </label>
-          </div>
+            <div class="input">
+              <label>
+                <span class="details">Phone</span>
+                <input
+                  type="text"
+                  name="Phone"
+                  maxlength="11"
+                  id="Ph"
+                  value="{{ phone }}"
+                />
+              </label>
+            </div>
 
-          <div class="input">
-            <label>
-              <span class="details">Email</span>
-              <input id="E" type="email">
-            </label>
-          </div>
+            <div class="input">
+              <label>
+                <span class="details">GPA</span>
+                <input type="text" name="gpa" id="GPA" value="{{ gpa }}" />
+              </label>
+            </div>
 
-          <div class="input">
-            <label>
-              <span class="details">Phone</span>
-              <input type="text" name="Phone" maxlength="11" id="Ph">
-            </label>
-          </div>
+            <div class="input">
+              <label>
+                <span class="details">Date of Birth</span>
+                <input
+                  id="Dob"
+                  type="date"
+                  name="d"
+                  value="{{ birth|date:'Y-m-d' }}"
+                  data-value="{{ birth|date:'Y-m-d' }}"
+                />
+              </label>
+            </div>
 
-          <div class="input">
-            <label>
-              <span class="details">GPA</span>
-              <input type="text" name="GPA" id="GPA" />
-            </label>
-          </div>
+            <div class="input">
+              <label>
+                <span class="Gender">Enter your Gender :</span>
+                <select id="g">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </label>
+            </div>
 
-          <div class="input">
-            <label>
-              <span class="details">Date of Birth</span>
-              <input id="Dob" type="Date">
-            </label>
-          </div>
+            <div class="input">
+              <label>
+                <span class="details">Level</span>
+                <input type="text" name="l" id="Lev" value="{{ level }}" />
+              </label>
+            </div>
 
-          <div class="input">
-            <label>
-              <span class="Gender">Enter your Gender :</span>
-              <select id="g">
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-              </select>
-            </label>
-          </div>
+            <div class="input">
+              <label>
+                <span class="details">Enter your Status</span>
+              </label>
+              <div class="Rad">
+                <label for="Active">Active</label>
+                <input class="Radio" type="radio" id="Active" name="Status"
+                value="Active" {% if statu == "Active"%} checked{% endif %}>
 
-          <div class="input">
-            <label>
-              <span class="details">Level</span>
-              <input type="text" id="Lev">
-            </label>
-          </div>
+                <label class="Text" for="Inactive">Inactive</label>
+                <input class="Text2" type="radio" id="Inactive" name="Status"
+                value="Inactive" {% if statu == "Inactive" %}checked{% endif %}>
+              </div>
+            </div>
 
-          <div class="input">
-            <label>
-              <span class="details">Enter your Status</span>
-            </label>
-            <div class="Rad">
-              <label for="Active">Active</label>
-              <input class="Radio" type="radio" id="Active" name="Status" value="Active">
+            <div class="input">
+              <label>
+                <span class="details">Department</span>
+                <input
+                  type="text"
+                  disabled
+                  id="Depart"
+                  value="{{ department }}"
+                />
+              </label>
+            </div>
 
-              <label class="Text" for="Inactive">Inactive</label>
-              <input class="Text2" type="radio" id="Inactive" name="Status" value="Inactive">
+            <div class="button">
+              <button type="submit">Done</button>
+              <button type="submit">Delete Student</button>
             </div>
           </div>
-
-          <div class="input">
-            <label>
-              <span class="details">Department</span>
-              <input type="text" disabled id="Depart">
-            </label>
-          </div>
-
-          <div class="button">
-            <button type="button" onclick="Done()">Done</button>
-            <button type="button" onclick="Remove()">Delete Student</button>
-          </div>
-
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>

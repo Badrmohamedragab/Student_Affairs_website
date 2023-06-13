@@ -4,6 +4,22 @@ $(document).ready(function () {
         return password === value;
     }, "Passwords do not match.");
 
+    $.validator.addMethod("DepartmentValidate", function () {
+        let L = $("#Lev").val();
+
+        if (L >= 3) {
+            $("#Depart").prop("readonly", false);
+            $("#Depart").prop("required", true);
+            return $("#Depart").val() !== "";
+        }
+        else {
+            $("#Depart").prop("readonly", true);
+            $("#Depart").prop("required", false);
+            $("#Depart").val("General", true);
+            return true;
+        }
+    });
+
     $("#validateForm").validate({
         rules: {
             Name: {
@@ -33,7 +49,7 @@ $(document).ready(function () {
                 required: true
             },
             Department: {
-                required: true
+                DepartmentValidate: true,
             },
             Password: {
                 required: true,
@@ -65,11 +81,11 @@ $(document).ready(function () {
             GPA: {
                 required: "Please enter a valid GPA."
             },
-            Department: {
-                required: "Please enter Department.",
-            },
             BirthDate: {
                 required: "Please enter Birth date.",
+            },
+            Department: {
+                required: "Department is required if Level is greater than or equal to 3.",
             },
             Level: {
                 required: "Please enter Level.",
@@ -91,7 +107,6 @@ $(document).ready(function () {
                 button: "ok",
             }).then(() => {
                 form.submit()
-                window.location.href = "/Home-Registered"
             })
         }
     });

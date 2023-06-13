@@ -14,7 +14,7 @@
 <body>
   <nav class="nav">
     <div>
-      <img src="/../static/images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
+      <img src="/../static/images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">{% csrf_token %}
       <a href="#footer-clean">ABOUT US</a>&emsp;
       <a href="{% url 'Login' %}">LOGIN</a>&emsp;
       <a id="Register">REGISTER</a>&emsp;
@@ -26,7 +26,7 @@
   <div class="container">
     <div class="title">Registration</div>
     <div class="content">
-      <form method="POST" id="validateForm" name="validateForm" action="{url 'Register'}"> {% csrf_token %}
+      <form method="POST" id="validateForm" name="validateForm"> {% csrf_token %}
         <div class="user-details">
 
           <div class="input">

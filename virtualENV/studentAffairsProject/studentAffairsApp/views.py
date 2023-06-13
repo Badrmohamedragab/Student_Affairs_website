@@ -26,7 +26,8 @@ def Register(request):
                         birthDate = Brith, gender = Gender, password = Password)
         
         admin.save()
-    
+        return redirect('Home-Registered')
+
     return render(request, 'Register.html')
     
 
@@ -49,6 +50,7 @@ def AddStudent(request):
                         department = Department, password = Password)
         
         student.save()
+        return redirect('Home-Registered')
     
     return render(request, 'Add Student.html')
 
@@ -74,32 +76,74 @@ def search(request):
             students = Student.objects.filter(name__startswith = search_query)
         else:
             students = None
+            
         return render(request, 'search.html', {'students': students})
 
 
 def change_department(request):
     if request.method == "POST":
-        dep = request.POST['depart']
-        id = request.POST['id']
+        dep = request.POST["depart"]
+        id = request.POST["id"]
         student = Student.objects.get(id=id)
         student.department = dep
         student.save()
+
     name = request.GET.get('name')
     id = request.GET.get('id')
     department = request.GET.get('department')
     return render(request, 'Change Department.html', {'name': name, 'id': id, 'department': department})
 
-        
+def changeStatus(request):
+
+    return render(request, 'change the status from table .html')
 
 def loginToUpdate(request):
-    
+    if request.method == 'POST':
+        Id = request.POST.get("ID")
+        register = Student.objects.all()
+        for x in register:
+            if x.id == int(Id):
+                return redirect('Update', id = Id)
+            
+        return redirect('loginToUpdate')
     return render(request, 'logintoupdate.html')
 
 
-def Update(request):
+def Update(request, id):
+    student=Student.objects.get(id=id)
+    if (request.method=="POST"):
+        n = request.POST["n"]
+        
+        e = request.POST['e']
+        Phone = request.POST['Phone']
+        gpa = request.POST['gpa']
+        d = request.POST['d']
+        
+        l = request.POST['l']
+        Status = request.POST['Status']
+        # Update the student's data
+        student.name = n
+        student.Email = e
+        student.phone = Phone
+        student.gpa = gpa
+        student.birthDate = d
+        
+        student.level = l
+        student.status = Status
+        # Save the student's data
+        student.save()
     
-    return render(request, 'Update.html')
-
-
-def changeStatus(request):
-    return render(request, 'change the status from table .html')
+    studentname=student.name
+    studentid=student.id
+    studentemail=student.Email
+    studentphone=student.phone
+    studentgpa=student.gpa
+    studentbirth=student.birthDate
+    studentgander=student.gender
+    studentlevel=student.level
+    studentstatu=student.status
+    studentdept=student.department
+    return render(request, 'Update.html',{'name': studentname, 'id': studentid,
+                                          'email': studentemail,'phone': studentphone,
+                                          'gpa': studentgpa,'birth': studentbirth,'gander': studentgander,
+                                          'level': studentlevel,'statu':studentstatu,'department': studentdept})

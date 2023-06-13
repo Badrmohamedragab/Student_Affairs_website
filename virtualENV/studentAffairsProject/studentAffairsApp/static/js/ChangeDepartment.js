@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     $("#validateForm").validate({
         submitHandler: function (form) {
             swal({
@@ -7,10 +6,9 @@ $(document).ready(function () {
                 icon: "success",
                 text: "Your registration successed.",
                 button: "ok",
-
             }).then(() => {
                 form.submit()
-                window.location.href = "/Home-Registered" 
+                window.location.href = "/Home-Registered"
             })
         }
     });

@@ -24,7 +24,8 @@
     </div>
   </nav>
 
-  <form>
+  <form method="POST" action="{% url 'loginToUpdate' %}?id={{ ID.value|urlencode }}">
+    {% csrf_token %}
     <div class="box">
       <div class="container">
 
@@ -33,29 +34,13 @@
         </div>
 
         <div class="input-field">
-          <input type="text" class="input" placeholder="ID" id="ID">
+          <input name="ID" type="text" class="input" placeholder="ID" id="ID">
           <i class='bx bx-user'></i>
         </div>
 
-        <script>
-
-          localStorage.setItem("2020", JSON.stringify(Stud))
-          function validate() {
-            let username = document.getElementById("ID").value;
-            let student = JSON.parse(localStorage.getItem(username));
-
-            if (localStorage.getItem(username) !== null && username === student.ID) {
-              data(document.getElementById("ID").value);
-            }
-            else {
-              swal("id not found", "Please check your id", "error", { //sweet alert
-                button: "try again",
-              });
-            }
-          }
-        </script>
+        
         <div class="input-field">
-          <button class="submit" type="button" onclick="validate()">Show Data</button>
+          <button class="submit" type="submit" >Show Data</button>
         </div>
       </div>
     </div>

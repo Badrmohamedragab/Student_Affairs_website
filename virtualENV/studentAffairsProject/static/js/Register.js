@@ -42,7 +42,7 @@ $(document).ready(function () {
             },
             PassConf: {
                 required: true,
-                passwordMatch: true // Use the custom validation rule for password matching
+                passwordMatch: true
             }
         },
         messages: {
@@ -92,7 +92,6 @@ $(document).ready(function () {
                 button: "ok",
             }).then(() => {
                 form.submit()
-                window.location.href = "/Home-Registered"
             })
         }
     });

@@ -1,62 +1,88 @@
-function Remove() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const id = urlParams.get('id');
-  window.localStorage.removeItem(id);
-}
-function data(i) {
-  window.location.href = "Update?id=" + i;
-}
-function showdata() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const id = urlParams.get('id');
-  let stu = JSON.parse(localStorage.getItem(id));
-  document.getElementById("username").value = stu.Name;
-  document.getElementById("ID").value = stu.ID;
-  document.getElementById("E").value = stu.Email;
-  document.getElementById("Ph").value = stu.Phone;
-  document.getElementById("GPA").value = stu.GPA;
-  document.getElementById("Dob").value = stu.birth;
-  document.getElementById("Lev").value = stu.Level;
-  document.getElementById("Depart").value = stu.Department;
-
-  let Stat = document.getElementsByName("Status");
-
-  for (let i = 0; i < Stat.length; i++) {
-    if (Stat[i].value === stu.Status) {
-      Stat[i].checked = true;
-    }
-  }
-}
-
-function Done() {
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const id = urlParams.get('id');
-  let Stud = JSON.parse(localStorage.getItem(id));
-
-  Stud.Name = document.getElementById("username").value;
-  Stud.ID = document.getElementById("ID").value;
-  Stud.Email = document.getElementById("E").value;
-  Stud.Phone = document.getElementById("Ph").value;
-  Stud.GPA = document.getElementById("GPA").value;
-  Stud.birth = document.getElementById("Dob").value;
-
-  const select = document.getElementById("g");
-  Stud.Gender = select.options[select.selectedIndex].value;
-
-  Stud.Level = document.getElementById("Lev").value;
-
-  const Stat = document.getElementsByName('Status');
-  for (let i = 0; i < Stat.length; i++) {
-    if (Stat[i].checked) {
-      Stud.Status = Stat[i].value;
-    }
-  }
-  Stud.Department = document.getElementById("Depart").value;
-  window.localStorage.setItem(id, JSON.stringify(Stud));
-  swal("Successful", "The information changed successfully", "success", { //sweet alert
-    button: "ok",
-  }).then(() => {
-    window.location.href = "/Home-Registered";
-  });
-}
+$(document).ready(function () {
+    $("#validateForm").validate({
+        rules: {
+            Name: {
+                required: true,
+                minlength: 3,
+                numeric: false
+            },
+            Email: {
+                email: true,
+                required: true
+            },
+            Id: {
+                required: true
+            },
+            Phone: {
+                required: true,
+                minlength: 11,
+                maxlength: 11
+            },
+            GPA: {
+                required: true
+            },
+            BirthDate: {
+                required: true
+            },
+            Level: {
+                required: true
+            },
+            Department: {
+                required: true
+            },
+            Password: {
+                required: true,
+                minlength: 8,
+                maxlength: 15
+            },
+            
+        },
+        messages: {
+            Name: {
+                required: "Please enter a valid name.",
+                minlength: "Name must be at least 3 characters."
+            },
+            Email: {
+                required: "Please enter an email.",
+                email: "Please enter valid email."
+            },
+            Phone: {
+                required: "Please enter a phone.",
+                minlength: "Please enter valid phone (11 digits).",
+                maxlength: "Please enter valid phone."
+            },
+            Id: {
+                required: "Please enter an id.",
+            },
+            GPA: {
+                required: "Please enter a valid GPA."
+            },
+            Department: {
+                required: "Please enter Department.",
+            },
+            BirthDate: {
+                required: "Please enter Birth date.",
+            },
+            Level: {
+                required: "Please enter Level.",
+            },
+            Password: {
+                required: "Please enter a password.",
+                minlength: "The password should be at least 8 characters.",
+                maxlength: "The password should be at most 15 characters."
+            },
+            
+        },
+        submitHandler: function (form) {
+            swal({
+                title: "Success!",
+                icon: "success",
+                text: "Your registration successed.",
+                button: "ok",
+            }).then(() => {
+                form.submit()
+                window.location.href = "/Home-Registered"
+            })
+        }
+    });
+});
