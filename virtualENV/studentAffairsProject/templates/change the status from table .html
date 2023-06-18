@@ -4,12 +4,60 @@
 <head>
   <link rel="icon" href="/../static/images/icon.png">
   <link rel="stylesheet" href="/../static/css/change%20status.css">
+  <style>
+    .custom-select {
+  position: relative;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.custom-select select {
+  display: none; /* Hide the default select arrow */
+}
+
+.custom-select::after {
+  content: '\25BC'; /* Unicode character for down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.custom-select select:focus {
+  outline: none; /* Remove the default focus styles */
+}
+
+/* Style the selected option */
+.custom-select select option[selected] {
+  background-color: #e1e1e1;
+}
+
+/* Style the dropdown menu */
+.custom-select select option {
+  padding: 8px 12px;
+}
+
+/* Hover effect on the dropdown options */
+.custom-select select option:hover {
+  background-color: #e1e1e1;
+}
+
+/* Style the dropdown when it's open */
+.custom-select select:active,
+.custom-select select:focus {
+  background-color: #ddd;
+}
+  </style>
   <meta charset="UTF-8">
   <title>Students Table</title>
 </head>
 
 <body>
-  <script>
+  <!-- <script>
     function Done() {
 
       const rows = document.querySelectorAll("#tableBody tr"); // get all rows in the table
@@ -27,7 +75,7 @@
 
         localStorage.setItem(id, JSON.stringify(student)); // save the updated student object to localStorage
       }
-    }
+    } -->
 
   </script>
 
@@ -55,7 +103,25 @@
           </tr>
         </thead>
         <tbody id="tableBody">
-          <script>
+          {% for student in students %}
+  <tr>
+    <td>{{ student.name }}</td>
+    <td>{{ student.id }}</td>
+    <td>
+      <form method="POST" action="{% url 'change-status' student.id %}">
+        {% csrf_token %}
+        <select name="Status" id="Status{{ student.id }}" class="custom-select" onchange="this.form.submit()">
+          <option value="Active" {% if student.status == "Active" %}selected{% endif %}>Active</option>
+          <option value="Inactive" {% if student.status == "Inactive" %}selected{% endif %}>Inactive</option>
+        </select>
+      </form>
+    </td>
+    <td>{{ student.level }}</td>
+  </tr>
+{% endfor %}
+        </tbody>
+        
+          <!-- <script>
             const tableBody = document.getElementById("tableBody");
 
             for (let i = 0; i < localStorage.length; i++) {
@@ -110,11 +176,12 @@
               row.appendChild(levelCell);
               tableBody.appendChild(row);
             }
-          </script>
-        </tbody>
+          </script> -->
+        <!-- </tbody> -->
       </table>
       <br>
-      <button type="submit" onclick="Done()"> Save</button>
+      <!-- <button type="submit" onclick="Done()"> Save</button> -->
+    </form>
     </div>
   </div>
 </body>
