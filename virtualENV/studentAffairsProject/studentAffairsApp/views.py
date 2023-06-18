@@ -147,3 +147,21 @@ def Update(request, id):
                                           'email': studentemail,'phone': studentphone,
                                           'gpa': studentgpa,'birth': studentbirth,'gander': studentgander,
                                           'level': studentlevel,'statu':studentstatu,'department': studentdept})
+
+
+
+
+def ListStudentPage(request):
+    students = Student.objects.all()
+    context = {'students': students}
+    return render(request, 'change the status from table .html', context)
+
+
+def changeStatus(request, id):
+    student = Student.objects.get(id=id)
+    if request.method == "POST":
+        student.status = request.POST["Status"]
+        student.save()
+        return redirect('changeStatus')  # Redirect to the student table page
+    else:
+        return render(request, 'change-status.html', {'student': student})
