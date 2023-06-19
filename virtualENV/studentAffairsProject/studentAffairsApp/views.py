@@ -1,6 +1,11 @@
 from pyexpat.errors import messages
-from django.shortcuts import redirect, render
+from pyexpat.errors import messages
+from django.contrib import messages
+
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from .models import Student, Admin
+
 
 def index(request):
     return render(request, 'index.html')
@@ -23,13 +28,13 @@ def Register(request):
         Password = request.POST["Password"]
 
         admin = Admin(name = Name, id = Id, Email = email, phone = Phone,
-                        birthDate = Brith, gender = Gender, password = Password)
-        
+                      birthDate = Brith, gender = Gender, password = Password)
+
         admin.save()
         return redirect('Home-Registered')
 
     return render(request, 'Register.html')
-    
+
 
 def AddStudent(request):
     if request.method == "POST":
@@ -46,12 +51,12 @@ def AddStudent(request):
         Password = request.POST["Password"]
 
         student = Student(name = Name, id = Id, Email = email, phone = Phone, gpa = GPA,
-                        birthDate = Brith, gender = Gender, level = Level, status = Status,
-                        department = Department, password = Password)
-        
+                          birthDate = Brith, gender = Gender, level = Level, status = Status,
+                          department = Department, password = Password)
+
         student.save()
         return redirect('Home-Registered')
-    
+
     return render(request, 'Add Student.html')
 
 def Login(request):
@@ -62,10 +67,14 @@ def Login(request):
         for x in register:
             if email == x.Email:
                 if password == x.password:
+                    # messages.success(request, 'Login successful!')
                     return redirect('Home-Registered')
-                
-        messages.error(request, 'Invalid email or password.')
-        return redirect('Login')
+                else:
+                    messages.error(request, 'Invalid password.')
+                    return redirect('Login')
+            else:
+                messages.error(request, 'Invalid email.')
+                return redirect('Login')
 
     return render(request, 'Login.html')
 
@@ -76,7 +85,7 @@ def search(request):
             students = Student.objects.filter(name__startswith = search_query)
         else:
             students = None
-            
+
         return render(request, 'search.html', {'students': students})
 
 
@@ -104,7 +113,7 @@ def loginToUpdate(request):
         for x in register:
             if x.id == int(Id):
                 return redirect('Update', id = Id)
-            
+
         return redirect('loginToUpdate')
     return render(request, 'logintoupdate.html')
 
@@ -113,12 +122,12 @@ def Update(request, id):
     student=Student.objects.get(id=id)
     if (request.method=="POST"):
         n = request.POST["n"]
-        
+
         e = request.POST['e']
         Phone = request.POST['Phone']
         gpa = request.POST['gpa']
         d = request.POST['d']
-        
+
         l = request.POST['l']
         Status = request.POST['Status']
         # Update the student's data
@@ -127,12 +136,12 @@ def Update(request, id):
         student.phone = Phone
         student.gpa = gpa
         student.birthDate = d
-        
+
         student.level = l
         student.status = Status
         # Save the student's data
         student.save()
-    
+
     studentname=student.name
     studentid=student.id
     studentemail=student.Email
