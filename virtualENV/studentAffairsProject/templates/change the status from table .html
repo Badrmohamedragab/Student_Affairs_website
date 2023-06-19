@@ -100,6 +100,7 @@
             <th>ID</th>
             <th>Status</th>
             <th>Level</th>
+            <th>Department</th>
           </tr>
         </thead>
         <tbody id="tableBody">
@@ -108,7 +109,7 @@
     <td>{{ student.name }}</td>
     <td>{{ student.id }}</td>
     <td>
-      <form method="POST" action="{% url 'change-status' student.id %}">
+      <form method="POST" action="{% url 'change-status' id=student.id %}">
         {% csrf_token %}
         <select name="Status" id="Status{{ student.id }}" class="custom-select" onchange="this.form.submit()">
           <option value="Active" {% if student.status == "Active" %}selected{% endif %}>Active</option>
@@ -117,6 +118,7 @@
       </form>
     </td>
     <td>{{ student.level }}</td>
+    <td>{{ student.department }}</td>
   </tr>
 {% endfor %}
         </tbody>

@@ -8,7 +8,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
   <link rel="icon" href="/../static/images/icon.png">
-  <script src="/../static/js/changeDepartment.js"></script>
+  <!-- <script src="/../static/js/changeDepartment.js"></script> -->
   <link rel="stylesheet" href="/../static/css/changeDepartment.css">
 </head>
 <nav>
@@ -23,12 +23,13 @@
 <body>
   <div class="container">
     <div class="content">
-      <form id="validateForm" method="POST"> {% csrf_token %}
+      <form id="validateForm" action="{% url 'Change Department' %}" method="POST">
+        {% csrf_token %}
         <h1 id="title" style="text-align: center;">Update Department</h1>
         <div class="user-details">
           <label>
             <span class="details">Student Name :</span>
-            <input type="text" id="StdNam" readonly value="{{ name }}">
+            <input type="text" id="StdNam" readonly name="name" value="{{ name }}">
           </label>
         </div>
         <br>
@@ -44,7 +45,7 @@
         <div class="user-details">
           <label>
             <span class="details">Edit Department :</span>
-            <input id="Department" list="Dep" class="ListOfDepart" value="{{ department }}">
+            <input id="Department" name="depart" list="Dep" class="ListOfDepart" value="{{ department }}">
             <datalist id="Dep">
               <option value="IS">
               <option value="CS">
@@ -57,6 +58,8 @@
         <br>
         <input type="submit" value="Update" id="update">
       </form>
+      
+      
     </div>
   </div>
 </body>
