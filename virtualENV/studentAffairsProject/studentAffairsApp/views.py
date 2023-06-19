@@ -118,46 +118,49 @@ def loginToUpdate(request):
         return redirect('loginToUpdate')
     return render(request, 'logintoupdate.html')
 
-
 def Update(request, id):
-    student=Student.objects.get(id=id)
-    if (request.method=="POST"):
-        n = request.POST["n"]
+    student = Student.objects.get(id=id)
 
-        e = request.POST['e']
-        Phone = request.POST['Phone']
-        gpa = request.POST['gpa']
-        d = request.POST['d']
+    # Handle HTTP POST request from form
+    if request.method == 'POST':
+        if 'delete' in request.POST:
+            student.delete()
+            return redirect('Home-Registered')
+        else:
+            n = request.POST['n']
+            e = request.POST['e']
+            Phone = request.POST['Phone']
+            gpa = request.POST['gpa']
+            d = request.POST['d']
+            l = request.POST['l']
+            Status = request.POST['Status']
 
-        l = request.POST['l']
-        Status = request.POST['Status']
-        # Update the student's data
-        student.name = n
-        student.Email = e
-        student.phone = Phone
-        student.gpa = gpa
-        student.birthDate = d
+            # Update the student's data
+            student.name = n
+            student.Email = e
+            student.phone = Phone
+            student.gpa = gpa
+            student.birthDate = d
+            student.level = l
+            student.status = Status
+            # Save the student's data
+            student.save()
 
-        student.level = l
-        student.status = Status
-        # Save the student's data
-        student.save()
-
-    studentname=student.name
-    studentid=student.id
-    studentemail=student.Email
-    studentphone=student.phone
-    studentgpa=student.gpa
-    studentbirth=student.birthDate
-    studentgander=student.gender
-    studentlevel=student.level
-    studentstatu=student.status
-    studentdept=student.department
-    return render(request, 'Update.html',{'name': studentname, 'id': studentid,
-                                          'email': studentemail,'phone': studentphone,
-                                          'gpa': studentgpa,'birth': studentbirth,'gander': studentgander,
-                                          'level': studentlevel,'statu':studentstatu,'department': studentdept})
-
+    # Render the HTML template with the student's data
+    studentname = student.name
+    studentid = student.id
+    studentemail = student.Email
+    studentphone = student.phone
+    studentgpa = student.gpa
+    studentbirth = student.birthDate
+    studentgander = student.gender
+    studentlevel = student.level
+    studentstatu = student.status
+    studentdept = student.department
+    return render(request, 'Update.html', {'name': studentname, 'id': studentid,
+                                            'email': studentemail, 'phone': studentphone,
+                                            'gpa': studentgpa, 'birth': studentbirth, 'gander': studentgander,
+                                            'level': studentlevel, 'statu': studentstatu, 'department': studentdept})
 
 
 
