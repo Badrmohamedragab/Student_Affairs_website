@@ -67,7 +67,6 @@ def Login(request):
         for x in register:
             if email == x.Email:
                 if password == x.password:
-                    # messages.success(request, 'Login successful!')
                     return redirect('Home-Registered')
                 else:
                     messages.error(request, 'Invalid password.')
@@ -96,16 +95,18 @@ def change_department(request):
         student = Student.objects.get(id=student_id)
         student.department = dep
         student.save()
-        return redirect('changeStatus')
+        return redirect('Home-Registered')
     else:
         name = request.GET.get('name')
         student_id = request.GET.get('id')
         department = request.GET.get('department')
         return render(request, 'Change Department.html', {'name': name, 'id': student_id, 'department': department})
 
+
 def changeStatus(request):
 
     return render(request, 'change the status from table .html')
+
 
 def loginToUpdate(request):
     if request.method == 'POST':
@@ -117,6 +118,7 @@ def loginToUpdate(request):
 
         return redirect('loginToUpdate')
     return render(request, 'logintoupdate.html')
+
 
 def Update(request, id):
     student = Student.objects.get(id=id)
@@ -145,6 +147,7 @@ def Update(request, id):
             student.status = Status
             # Save the student's data
             student.save()
+            return redirect('Home-Registered')
 
     # Render the HTML template with the student's data
     studentname = student.name
@@ -161,7 +164,6 @@ def Update(request, id):
                                             'email': studentemail, 'phone': studentphone,
                                             'gpa': studentgpa, 'birth': studentbirth, 'gander': studentgander,
                                             'level': studentlevel, 'statu': studentstatu, 'department': studentdept})
-
 
 
 def ListStudentPage(request):

@@ -38,6 +38,12 @@ nav img {
     margin-left: 10px;
 }
 
+#StudentTable{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    margin-top: 3px;
+}
+
 #Err {
     width: 500px;
     height: 100px;

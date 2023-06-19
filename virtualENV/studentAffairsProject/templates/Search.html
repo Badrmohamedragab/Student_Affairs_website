@@ -16,12 +16,9 @@
     <nav>
         <div id="nav">
             <img src="/../static/images/Logo%20of%20Cairo.jpg" alt="no photo" class="cairo_photo">
-            <a href="Home.html">Home</a>&emsp;
-            <a href="Login.html">Login</a>&emsp;
-            <a href="Register.html">Register</a>&emsp;
-            <a href="Search.html">Search</a>&emsp;
-            <a href="Update.html">Update</a>&emsp;
-            <a href="StudTable.html">Students Table</a>
+            <a href="{% url 'Home' %}">LOGOUT</a>&emsp;
+            <a id="StudentTable">STUDENT TABLE</a>
+            <a href="{% url 'Home-Registered' %}">HOME</a>&emsp;
         </div>
     </nav>
 

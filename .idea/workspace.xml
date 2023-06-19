@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e56b6dd4-fe27-44c1-91ef-0ac072fb2404" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/virtualENV/studentAffairsProject/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/virtualENV/studentAffairsProject/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/virtualENV/studentAffairsProject/static/images/png-clipart-computer-icons-login-symbol-login-interface-miscellaneous-text-fotor-bg-remover-202304142254 (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/virtualENV/studentAffairsProject/static/js/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/virtualENV/studentAffairsProject/static/js/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/virtualENV/studentAffairsProject/studentAffairsApp/static/images/png-clipart-computer-icons-login-symbol-login-interface-miscellaneous-text-fotor-bg-remover-202304142254 (1).png" beforeDir="false" afterPath="$PROJECT_DIR$/virtualENV/studentAffairsProject/studentAffairsApp/static/images/png-clipart-computer-icons-login-symbol-login-interface-miscellaneous-text-fotor-bg-remover-202304142254 (1).png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/virtualENV/studentAffairsProject/studentAffairsApp/static/js/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/virtualENV/studentAffairsProject/studentAffairsApp/static/js/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/virtualENV/studentAffairsProject/studentAffairsApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/virtualENV/studentAffairsProject/studentAffairsApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/virtualENV/studentAffairsProject/templates/Register.html" beforeDir="false" afterPath="$PROJECT_DIR$/virtualENV/studentAffairsProject/templates/Register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/29e583b2-8e39-4a64-98af-1f4cad64c288.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/29e583b2-8e39-4a64-98af-1f4cad64c288.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +22,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "F:/My Study/Second Year/Second Semester/Web/Project/Final Phase/Student_Affairs_App",
+    "last_opened_file_path": "C:/Users/mahmo/Desktop/Web/Student_Affairs_App/virtualENV/studentAffairsProject",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -44,6 +39,7 @@
       <option name="presentableId" value="Default" />
       <updated>1685623558409</updated>
       <workItem from="1685623559423" duration="282000" />
+      <workItem from="1687209087595" duration="18000" />
     </task>
     <servers />
   </component>
